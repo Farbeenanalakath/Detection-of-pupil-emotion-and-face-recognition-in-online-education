@@ -1,0 +1,47 @@
+{% extends 'indexstaff.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="video1" enctype="multipart/form-data">
+  <br>
+  <br>
+  <center><h2>ADD VIDEOS</h2></center>
+  <center>  <h2>- - - - - - - - - - - - - - - - - - - - - -</h2></center>
+  <div align="center">
+  <table width="600" border="0" >
+    <tr>
+      <td><h3>Course </h3></td>
+      <td><select name="c" required>
+        <option value="">Select </option>
+
+        {% for i in val %}
+        <option value="{{i[0]}}">{{i[1]}}</option>
+        {% endfor %}
+      </select> </td>
+    </tr>
+      <BR>
+
+    <tr>
+      <td><h3>Description</h3></td>
+      <td><input type="text" name="d" required></td>
+    </tr>
+      <BR>
+    <tr>
+      <td><h3>VIDEO</h3></td>
+      <td><input type="file" name="v" required /></td>
+    </tr>
+    <BR>
+    <tr>
+      <td colspan="2">
+        <div align="center">
+<input type="submit" value="ADD"/> </div></td></tr>
+  </table>
+  </div>
+</form>
+</body>
+{% endblock %}
+
+
+
+
+
+

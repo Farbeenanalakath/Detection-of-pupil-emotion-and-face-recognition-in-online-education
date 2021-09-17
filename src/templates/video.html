@@ -1,0 +1,59 @@
+{% extends 'indexstaff.html' %}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #000000;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D81B60;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="video">
+  <div align="center">
+    <table width="71%" border="0" id="customers">
+      <tr>
+        <th scope="col">VIDEO</th>
+        <th scope="col">DATE</th>
+          <th scope="col">COURSE</th>
+          <th scope="col">DESCRIPTION</th>
+                <th scope="col">&nbsp;</th>
+
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i[2]}}<video width="400" height="150" controls>
+            <source src="./static/video/{{i[2]}}" type="video/mp4"></video></td>
+                <td>{{i[3]}}</td>
+           <td>{{i[6]}}</td>
+           <td>{{i[5]}}</td>
+        <td><a href="dltvd?id={{i[0]}}" onclick="return confirm('Are you sure ?')">DELETE</a></td>
+      </tr>{% endfor %}
+       <tr>
+      <td colspan="5">
+        <div align="center">
+<input type="submit" value="ADD NEW"/> </div></td></tr>
+      </table>
+
+  </div>
+</form>
+</body>
+{% endblock %}

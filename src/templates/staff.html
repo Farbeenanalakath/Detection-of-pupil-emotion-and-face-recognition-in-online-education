@@ -1,0 +1,68 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #000000;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D81B60;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="staffreg">
+  <div align="center">
+    <table width="71%" border="0" id="customers">
+      <tr>
+        <th scope="col">NAME</th>
+        <th scope="col">GENDER</th>
+                <th scope="col">PHOTO</th>
+        <th scope="col">PLACE</th>
+        <th scope="col">POST</th>
+        <th scope="col">PIN  </th>
+                <th scope="col">QUALIFICATION  </th>
+        <th scope="col">EXPERIENCE  </th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">PHONE</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i[2]}} {{i[3]}}</td>
+        <td>{{i[4]}}</td>
+        <td><img src="./static/staffpic/{{i[5]}}" height="100" width="100"> </td>
+        <td>{{i[6]}}</td>
+        <td>{{i[7]}}</td>
+        <td>{{i[8]}}</td>
+        <td>{{i[9]}}</td>
+        <td>{{i[10]}}</td>
+                <td>{{i[11]}}</td>
+        <td>{{i[12]}}</td>
+        <td><a href="dltstaff?id={{i[1]}}" onclick="return confirm('Are you sure ?')">DELETE</a></td>
+      </tr>{% endfor %}
+       <tr>
+      <td colspan="15">
+        <div align="center">
+<input type="submit" value="ADD NEW"/> </div></td></tr>
+      </table>
+  </div>
+</form>
+</body>
+{% endblock %}

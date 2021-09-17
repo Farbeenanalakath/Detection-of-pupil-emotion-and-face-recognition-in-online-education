@@ -1,0 +1,113 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+<html>
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="/staffreg1" enctype="multipart/form-data">
+  <div align="center">
+    <h2>Staff Registration</h2>
+    <table width="600" border="0" class="" >
+      <tr>
+          <td><h4>FIRST NAME</h4></td>
+        <td><label for="textfield"></label>
+        <input type="text" name="fn" required pattern="[A-Z a-z.]{3,25}" /></td>
+      </tr>
+          <tr>
+          <td><h4>LAST NAME</h4></td>
+        <td><label for="textfield"></label>
+        <input type="text" name="ln"  required pattern="[A-Z a-z.]{1,25}" /></td>
+      </tr>
+          <tr>
+          <td><h4>GENDER</h4></td>
+        <td><label for="textfield"></label>
+        <input type="radio" name="r" VALUE="MALE" checked  />MALE
+        <input type="radio" name="r" VALUE="FEMALE"   />FEMALE</td>
+      </tr>
+              <tr>
+          <td><h4>PHOTO</h4></td>
+        <td><label for="textfield"></label>
+        <input type="file" name="pic" required  /></td>
+      </tr>
+
+       <tr>
+           <td><h4>Place</h4></td>
+        <td><label for="textfield1"></label>
+        <input type="text" name="plc"  required pattern="[A-Z a-z.]{1,25}" /></td>
+      </tr>
+
+              <tr>
+          <td><h4>POST</h4></td>
+        <td><label for="textfield"></label>
+        <input type="text" name="post" required pattern="[A-Z a-z.]{2,25}" /></td>
+      </tr>
+              <tr>
+          <td><h4>PIN</h4></td>
+        <td><label for="textfield"></label>
+        <input type="text" name="pin" required pattern="[0-9]{6}" /></td>
+      </tr>
+              <tr>
+          <td><h4>QUALIFICATION</h4></td>
+        <td><label for="textfield"></label>
+        <input type="text" name="q" required  /></td>
+      </tr>
+              <tr>
+          <td><h4>EXPERIENCE</h4></td>
+        <td><label for="textfield"></label>
+        <input type="text" name="exp" required  /></td>
+      </tr>
+      <tr>
+          <td><h4>EMAIL </h4></td>
+        <td><label for="textfield8"></label>
+        <input type="text" name="em" id="textfield8"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/></td>
+      </tr>
+         <tr>
+          <td><h4>PHONE</h4></td>
+        <td><label for="textfield7"></label>
+        <input type="text" name="phn" id="textfield7" required pattern="[6789][0-9]{9}"/></td>
+      </tr>
+           <tr>
+               <td><h4>USERNAME</h4> </td>
+        <td><label for="textfield9"></label>
+        <input type="text" name="un" id="textfield9" required /></td>
+      </tr>
+           <tr>
+        <td><h4>PASSWORD </h4></td>
+        <td><label for="textfield10"></label>
+        <input type="password" name="pwd" id="textfield10" required /></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" name="button" id="button" value="SignUp" /></td>
+      </tr>
+    </table>
+      <br>
+      <br>
+    <p>&nbsp;</p>
+  </div>
+</form>
+{% endblock %}
